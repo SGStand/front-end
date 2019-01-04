@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>demo</title>
+        
+        <style>
+            iframe{
+                width: 100%;
+                height: 600px;
+            }
+        </style>
+        
+       
+    </head>
+
+    <body> 
+            <hr>
+            <section class="a标签">
+                <a href="https://www.imooc.com/" target="_blank">慕课_blank</a>
+                <a href="https://www.imooc.com/" target="_self">慕课_self</a>
+                <a href="https://www.imooc.com/" target="_parent">慕课_parent</a>
+                <a href="https://www.imooc.com/" target="_top">慕课_top</a>
+                <hr>
+                <a href="https://www.imooc.com/" download>下载</a>
+                <hr>
+                <iframe name=xxx src="https://isujin.com/" frameborder="0"></iframe>
+                <a target=xxx href="https://www.imooc.com/">慕课网</a>
+                <a target=xxx href="http://qq.com/">腾讯网</a>
+                <hr>
+                <a href="https://imooc.com/">下载</a>
+                // 以HTTPS协议打开imooc.com 
+                <hr>
+                <a href="//imooc.com/">下载</a>
+                // 当前页面是什么协议就用什么协议打开imooc.com
+                <hr>
+                <a href="./imooc.com/">下载</a>
+                // 会跳到当前目录/imooc.com
+                <hr>
+                <a href="#imooc/">下载</a>
+                // 会跳到当前页面中的imooc锚点，不发起请求
+                <hr>
+                <a href="?name=imooc">下载</a>
+                // 会跳到当前目录/?name=imooc
+                <hr>
+                <a href="javascript:;">下载</a>
+                // 实现一个点击之后什么也不做的按钮
+                <hr>
+                <a href="javascript:alerte(1);">下载</a>
+                // 执行JS代码 一个弹窗
+            <hr>
+            </section>
+        
+            <hr>
+            <section class="form标签">
+            <form action="index.html" method="POST">
+                <!---->
+                <input type="text" name="username">
+                <input type="password" name="password">
+                <input type="submit" value="提交">
+                <!--提交必须要有，不然不能提交（回车也不行）-->
+            </form>
+            <hr>
+            <form action="index.html" method="POST">
+                <label>用户名<input type="text" name="username"></label>
+                <label>密码<input type="password" name="password"></label>
+                <input type="submit" value="button">
+                <hr>
+                <label for="name">用户名</label><input type="text" name="username" id="name">
+                <label for="password">密码</label><input type="password" name="password" id="password">
+                <input type="submit" value="button">
+                <hr> 
+                今晚吃什么？
+                <!--checkbox实现多选框，value的值会被提交-->
+                <label><input type="checkbox" name="dinner" value="Dumplings">饺子</label>
+                <label><input type="checkbox" name="dinner" value="noodles">面条</label>
+                <input type="submit" value="button">
+                <hr>
+                明早吃啥子？
+                <!--radio实现单选框，需要有相同的name才能单选，value的值会被提交-->
+                <label><input type="radio" name="breakfast" value="Fritters">油条</label>
+                <label><input type="radio" name="breakfast" value="Rice noodle">米线</label>
+                <input type="submit" value="button">
+                <hr>
+                中午还吃吗？
+                <!--select实现下拉选择框-->
+                <label>
+                        <select name="option">
+                            <option value="yes">为什么不吃？</option>
+                            <option value="no">为什么要吃？</option>
+                            <option value="maybe">为什么要问？</option>
+                        </select>
+                        <input type="submit" value="button">
+                </label>
+                <hr>
+                <table border="1">
+                    <!--colgroup指定背景及宽度-->
+                    <colgroup>
+                        <col width=100>
+                        <col bgcolor=green width=200>
+                        <col width=100>
+                    </colgroup>
+                    <thead>
+                        <tr>
+                            <th>姓名</th><th>班级</th><th>分数</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>小米</td><td>C</td><td>80</td>
+                        </tr>
+                        <tr>
+                            <td>小华</td><td>C</td><td>82</td>
+                        </tr>
+                        <tr>
+                            <td>小苹</td><td>A</td><td>90</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <th>备注</th><td></td><td></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </form>
+        </section>
+        <hr>
+       
+        <a href="http://doc.zwwill.com/css/%E3%80%8Acss%E6%8F%AD%E7%A7%98%E3%80%8B.pdf" download>下载</a>
+        
+    </body>
+</html>
