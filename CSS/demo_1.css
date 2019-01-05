@@ -1,0 +1,41 @@
+
+body{
+    background: #837c7c;
+    margin: 0;
+}
+
+.yin-yang {
+    width: 96px;
+    box-sizing: content-box;
+    height: 48px;
+    background: #000000;
+    border-color: #ffffff;
+    border-style: solid;
+    border-width: 2px 2px 50px 2px;
+    border-radius: 100%;
+    position: relative;
+  }
+.yin-yang:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: #000000;
+    border: 18px solid #ffffff;
+    border-radius: 100%;
+    width: 12px;
+    height: 12px;
+    box-sizing: content-box;
+  }
+.yin-yang:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: #ffffff;
+    border: 18px solid #000000;
+    border-radius: 100%;
+    width: 12px;
+    height: 12px;
+    box-sizing: content-box;
+  }
