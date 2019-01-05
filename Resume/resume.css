@@ -1,6 +1,6 @@
 body{
-    background: rgb(244, 242, 242);
-    margin: 0%;
+    background: #efefef;
+    margin: 0;
 }
 
 a{
@@ -8,46 +8,78 @@ a{
     text-decoration: none;
 }
 
-.clearfix::after{
+*{
+    margin: 0;
+    padding: 0;
+}
+
+hr {
+    height: 0;
+    border: none;
+    border-top: 1px solid #dedede;
+  }
+
+ul,
+ol {
+  list-style: none;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-weight: normal;
+  }
+
+.clearfix::after {
     content: '';
     display: block;
     clear: both;
-}
+  }
+  
+
 
 .topNavBar{
     padding-top: 20px;
     padding-bottom: 20px;
-    padding-left: 16px;
-    padding-right: 16px;
+    padding-left: 0px;
+    padding-right: 0px;
+    /*是topNavBar脱离文档流，实现导航栏悬浮于背景图*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    /*会造成导航栏往里面缩，目前通过指定宽度协调（尽量不要指定，容易出BUG）*/
+    width: 100%;
+}
+/*如果左右宽度不对，再建一个类将包裹起来，重新指定左右padding*/
+.topNavBar-inner{
+    padding: 0 16px
 }
 
-.topNavBar>nav{
-    float: right;
-    padding-top: 4px;
+.topNavBar nav{
+    
+    padding-top: 6px;
     padding-bottom: 0px;
  
 
 }
 
-.topNavBar>a{
+.topNavBar a{
     float: left;
 }
 
-.topNavBar>nav>ul{
+.topNavBar nav>ul{
     list-style: none; 
-    margin: 0; 
+    margin: 0 0px 0 200px;
     padding: 0;
 }
 
-.topNavBar>nav>ul>li{
+.topNavBar nav>ul>li{
     float: left;
     margin-left: 17px;
     margin-right: 17px;
 }
 
-.topNavBar>nav>ul>li>a{
+.topNavBar nav>ul>li>a{
     font-size: 10px;
-    color: #B7B7B7;
+    color: white;
     font-weight: bold;
     /*给原来的元素增加一个相同的透明下划线，解决悬浮晃动问题*/
     border-top: 3px solid transparent;
@@ -59,8 +91,8 @@ a{
     display: block;
 }
 /*增加悬浮效果-下划线*/
-.topNavBar>nav>ul>li>a:hover{
-    border-bottom: 3px solid #e06567;
+.topNavBar nav>ul>li>a:hover{
+    border-bottom: 3px solid #f05d5d;
 }
 
 .topNavBar .logo{
@@ -73,8 +105,113 @@ a{
 
 .topNavBar .logo .rs{
     margin-left: 4px;
-    color: #e6686a
+    color: #f05d5d
 }
 .topNavBar .logo .card{
-    color: #9a9da2
+    color: white
+}
+
+.banner{
+    background-image: url(./img/resume_cover.jpg); 
+    /*迫不得已不要使用height 会出无穷无尽的bug*/
+    height: 515px;
+    /*局中 自适应*/
+    background-position: center center;
+    background-size: cover;
+}
+.banner .mask{
+    height: 515px;
+    background-color: rgba(0, 0, 0, 0.2)
+}
+
+.userCard{
+    max-width: 940px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5);
+}
+.userCard .welcome{
+    background: #f05d5d;
+    color: white;
+    /*设定内联元素的宽高的做法*/
+    display: inline-block;
+    padding: 4px 16px;
+    line-height: 22px;
+    position: relative;
+    margin-bottom: 10px;
+}
+.userCard .welcome .triangle {
+    display: block;
+    border: 10px solid transparent;
+    width: 0px;
+    border-left-color: #f05d5d;
+    border-top-width: 0px;
+    position: absolute;
+    left: 4px;
+    top: 100%;
+  }
+.userCard .picture{
+    float: left;
+    padding-bottom: 20px;
+}
+
+.userCard .text{
+    float: left;
+    margin-left: 65px;
+    width: 470px;
+}
+
+.userCard .text>h1{
+    margin-top: 18px;
+}
+
+.userCard .text>hr{
+    margin: 20px 0;
+}
+
+.userCard .pictureAndText {
+    padding: 50px;
+  }
+
+.userCard dl dt,
+.userCard dl dd {
+  float: left;
+  padding: 5px 0;
+}
+
+/*自动换行的办法*/
+.userCard dl dt {
+  width: 30%;
+  font-weight: bold;
+}
+.userCard dl dd {
+  width: 70%;
+  color: #9da0a7;
+}
+
+.userCard .media{
+    background-color: #f05d5d;
+    text-align: center;
+
+}
+
+.userCard svg{
+    width: 30px;
+    height: 30px;
+    fill: white;
+    /*解决SVG中距离边框的上下距离不一致*/
+    vertical-align: top;
+}
+.userCard >footer.media > a{
+    display: inline-block;
+    width: 40px;
+    padding: 5px 0;
+    line-height: 30px;
+    border-radius: 50%;
+    margin: 16px 16px;
+}
+
+.userCard>footer.media>a:hover{
+    background-color: #cf5d5f
 }

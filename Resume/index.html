@@ -3,37 +3,53 @@
     <head>
         <title>我的网页</title>
         <link rel="stylesheet" href="./resume.css">
+        <script src="//at.alicdn.com/t/font_1000830_ooflx0q9hn.js"></script>
+        <style type="text/css">
+            .icon {
+               width: 1em; height: 1em;
+               vertical-align: -0.15em;
+               fill: currentColor;
+               overflow: hidden;
+            }
+        </style>
     </head>
     <body>
-        <div class="topNavBar clearfix">
-            <!--alternative 可选-->
-            <a class="logo" href="#" alt="logo">
-                <span class="rs">RS</span>
-                <span class="card">card</span>
-            </a> 
-            <nav>
-                 <ul class="clearfix">
-                 <li><a href="#">ABOUT</a></li>    
-                 <li><a href="#">SKILLS</a></li>  
-                 <li><a href="#">EXPERIENCE</a></li>  
-                 <li><a href="#">PRICING</a></li>  
-                 <li><a href="#">BLOG</a></li>  
-                 <li><a href="#">CALENDAR</a></li>  
-                 <li><a href="#">CONTANCT</a></li>  
-                 <li><a href="#">OTHER</a></li>  
-                 <li><a href="#">ALL DEMOS</a></li>  
-                 </ul>
-            </nav>
+        <div class="topNavBar">
+            <div class="topNavBar-inner clearfix">
+                 <!--alternative 可选-->
+                <a class="logo" href="#" alt="logo">
+                    <span class="rs">RS</span>
+                    <span class="card">card</span>
+                </a> 
+                <nav>
+                     <ul class="clearfix">
+                     <li><a href="#">ABOUT</a></li>    
+                     <li><a href="#">SKILLS</a></li>  
+                     <li><a href="#">EXPERIENCE</a></li>  
+                     <li><a href="#">PRICING</a></li>  
+                     <li><a href="#">BLOG</a></li>  
+                     <li><a href="#">CALENDAR</a></li>  
+                     <li><a href="#">CONTANCT</a></li>  
+                     <li><a href="#">OTHER</a></li>  
+                     <li><a href="#">ALL DEMOS</a></li>  
+                     </ul>
+                </nav>
+            </div>
+            
         </div>
-        <div class="banner" style="background-img: url(#)"></div>
+        <div class="banner">
+            <div class="mask"></div>
+        </div>
         <main>
-            <div class="card">
-                <div class="picture">
-                    <img src="" alt="头 像">
-                </div>
-                <div class="text">
-                    <div class="profile">                   
-                        <span class="welcome">Hello</span>
+            <div class="userCard ">
+                <div class="pictureAndText clearfix">
+                     <div class="picture">
+                         <img src="./img/resume_avatar.jpeg" width="299" height="347" alt="头 像">
+                    </div>
+                    <div class="text">                  
+                        <span class="welcome">Hello
+                            <span class="triangle"></span>
+                        </span>
                         <h1>万青</h1>
                         <p>切图仔</p>
                         <hr>    <!--水平分割线-->
@@ -46,20 +62,27 @@
                             <dd><a href="mailto:SGAllhit@qq.cvom">暂无</a></dd>
                             <dt>手机</dt>
                             <dd>暂无</dd>
-                        </dl>
+                        </dl>  
                     </div>
-                    <footer class="media">
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                        <a href="#"><img src="#" alt="..."></a>
-                    </footer>
                 </div>
+                <footer class="media">
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-github"></use>
+                            </svg>
+                        </a>
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-twitter"></use>
+                                </svg>
+                        </a>
+                        <a href="#">
+                            <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-weibo"></use>
+                                </svg>
+                        </a>
+                </footer>
             </div>
-
             <a class="button" href="#">下载PDF简历</a>
 
             <p>
