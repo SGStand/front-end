@@ -1,0 +1,80 @@
+body{
+    background: rgb(244, 242, 242);
+    margin: 0%;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.clearfix::after{
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.topNavBar{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+.topNavBar>nav{
+    float: right;
+    padding-top: 4px;
+    padding-bottom: 0px;
+ 
+
+}
+
+.topNavBar>a{
+    float: left;
+}
+
+.topNavBar>nav>ul{
+    list-style: none; 
+    margin: 0; 
+    padding: 0;
+}
+
+.topNavBar>nav>ul>li{
+    float: left;
+    margin-left: 17px;
+    margin-right: 17px;
+}
+
+.topNavBar>nav>ul>li>a{
+    font-size: 10px;
+    color: #B7B7B7;
+    font-weight: bold;
+    /*给原来的元素增加一个相同的透明下划线，解决悬浮晃动问题*/
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+    /*增加上下边距*/
+    padding-top: 5px;
+    padding-bottom: 5px;
+    /*结局<li>不能包住<a>的问题*/
+    display: block;
+}
+/*增加悬浮效果-下划线*/
+.topNavBar>nav>ul>li>a:hover{
+    border-bottom: 3px solid #e06567;
+}
+
+.topNavBar .logo{
+    font-size: 21px;
+    font-family: "Arial Black";
+    padding-top: 2px;
+    padding-bottom: 2px;
+    
+}
+
+.topNavBar .logo .rs{
+    margin-left: 4px;
+    color: #e6686a
+}
+.topNavBar .logo .card{
+    color: #9a9da2
+}
