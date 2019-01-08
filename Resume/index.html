@@ -1,127 +1,175 @@
-<!DOCTYPE html> <!--选择文档类型-->
-<html>
-    <head>
-        <title>我的网页</title>
-        <link rel="stylesheet" href="./resume.css">
-        <script src="//at.alicdn.com/t/font_1000830_ooflx0q9hn.js"></script>
-        <style type="text/css">
-            .icon {
-               width: 1em; height: 1em;
-               vertical-align: -0.15em;
-               fill: currentColor;
-               overflow: hidden;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="topNavBar">
-            <div class="topNavBar-inner clearfix">
-                 <!--alternative 可选-->
-                <a class="logo" href="#" alt="logo">
-                    <span class="rs">RS</span>
-                    <span class="card">card</span>
-                </a> 
-                <nav>
-                     <ul class="clearfix">
-                     <li><a href="#">ABOUT</a></li>    
-                     <li><a href="#">SKILLS</a></li>  
-                     <li><a href="#">EXPERIENCE</a></li>  
-                     <li><a href="#">PRICING</a></li>  
-                     <li><a href="#">BLOG</a></li>  
-                     <li><a href="#">CALENDAR</a></li>  
-                     <li><a href="#">CONTANCT</a></li>  
-                     <li><a href="#">OTHER</a></li>  
-                     <li><a href="#">ALL DEMOS</a></li>  
-                     </ul>
-                </nav>
-            </div>
-            
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>个人简历</title>
+    <link rel="stylesheet" href="./resume.css">
+    <script src="//at.alicdn.com/t/font_1000830_0jntq4nkltgq.js"></script>
+    <style type="text/css">
+        .icon {
+           width: 1em; height: 1em;
+           vertical-align: -0.15em;
+           fill: currentColor;
+           overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <div class="topNavBar">
+        <div class="topNavBar-inner clearfix">
+            <a class="logo" href="#" art="logo">
+                <span class="rs">RS</span>
+                <span class="card">card</span>
+            </a>
+            <nav>
+                <ul class="clearfix">
+                    <li><a href="#">关于</a></li>
+                    <li><a href="#">技能</a></li>
+                    <li><a href="#">作品</a></li>
+                    <li><a href="#">博客</a></li>
+                    <li><a href="#">日历</a></li>
+                    <li><a href="#">联系方式</a></li>
+                    <li><a href="#">其他</a></li>
+                </ul>
+            </nav>
         </div>
-        <div class="banner">
-            <div class="mask"></div>
-        </div>
-        <main>
-            <div class="userCard ">
-                <div class="pictureAndText clearfix">
-                     <div class="picture">
-                         <img src="./img/resume_avatar.jpeg" width="299" height="347" alt="头 像">
-                    </div>
-                    <div class="text">                  
-                        <span class="welcome">Hello
-                            <span class="triangle"></span>
-                        </span>
-                        <h1>万青</h1>
-                        <p>切图仔</p>
-                        <hr>    <!--水平分割线-->
-                        <dl>    <!--description list 描述列表-->
-                            <dt>年龄</dt>   <!--description term 单词-->
-                            <dd>23</dd>   <!--description definition 单词定义-->
-                            <dt>所在城市</dt>
-                            <dd>深圳</dd>
-                            <dt>邮箱</dt>
-                            <dd><a href="mailto:SGAllhit@qq.cvom">暂无</a></dd>
-                            <dt>手机</dt>
-                            <dd>暂无</dd>
-                        </dl>  
-                    </div>
+    </div>
+    <div class="banner">
+        <div class="mask"></div>
+    </div>
+
+    <main>
+        <div class="userCard">
+            <div class="pictureAndText clearfix">
+                <div class="picture">
+                    <img src="./img/avatar.jpg" alt="这里有头🐘">
                 </div>
-                <footer class="media">
-                        <a href="#">
-                            <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-github"></use>
-                            </svg>
-                        </a>
-                        <a href="#">
-                            <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-twitter"></use>
-                                </svg>
-                        </a>
-                        <a href="#">
-                            <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon«-weibo"></use>
-                                </svg>
-                            </a>
-                </footer>
+                <div class="text">
+                    <span class="welcome">Hello
+                        <span class="triangle"></span>
+                    </span>
+                    <h1>万青</h1>
+                    <p>前端开发工程师（切图仔）</p>
+                    <hr>
+                    <dl>
+                        <dt>年龄</dt>
+                        <dd>89</dd>
+                        <dt>所在城市</dt>
+                        <dd>深圳</dd>
+                        <dt>邮箱</dt>
+                        <dd>123456@gmail.com</dd>
+                        <dt>手机</dt>
+                        <dd>130xxxxxxxx</dd>
+                    </dl>
+                </div>
             </div>
+            <footer class="media">
+                <a href="#" target="_blank">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-github"></use>
+                    </svg>
+                </a>
+                <a href="#" target="_blank"> 
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-twitter"></use>
+                    </svg>
+                </a>
+                <a href="#" target="_blank">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-weibo"></use>
+                    </svg>
+                </a>
+            </footer>
+        </div>
 
-            <p class="downloadResume-wrapper">
-                <a class="downloadResume" href="#" target="_blank" download>下载PDF简历</a>
-            </p>
-            
+        <p class="downloadResume-wrapper">
+            <a class="downloadResume" href="#" target="_blank" download>下载 PDF简历</a>
+        </p>
 
-            <p class="selfIntrouduction">
-                万青<br>    <!--强制换行-->
-                切图仔
-            </p>
+        <p class="selfIntroduction">
+            万青，菜鸟切图仔，现在工地搬砖
+        </p>
 
-        </main>
         <section class="skills">
             <h2>技能</h2>
-            <ol>
-                <li>HTML 5 &amp; CSS 3</li>
-                <li>JavaScript</li>
-                <li>jQuery</li>
-                <li>Vue</li>
-                <li>React</li>
-                <li>HTTP</li>
+            <ol class="clearfix">
+                <li>
+                    <h3>HTML5 & CSS3</h3>
+                    <div class="progressBar">
+                        <div class="progress"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>JavaScript</h3>
+                    <div class="progressBar">
+                        <div class="progress"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>jQuery</h3>
+                    <div class="progressBar">
+                        <div class="progress"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>Vue.js</h3>
+                    <div class="progressBar">
+                        <div class="progress"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>React.js</h3>
+                    <div class="progressBar">
+                        <div class="progress"></div>
+                    </div>
+                </li>
+                <li>
+                    <h3>Node.js</h3>
+                    <div class="progressBar">
+                        <div class="progress"></div>
+                    </div>
+                </li>
             </ol>
         </section>
-        <section>
-            <h2>作 品 集</h2>
-            <nav>
-                <ol>
-                    <li>所有</li>
-                    <li>框架</li>
-                    <li>原生JS&amp;CSS</li>
-                </ol>
-            </nav>
-            <div class="jobs">
-                <div class="big"> </div>
-                <div class="small"> </div>
-                <div class="small"> </div>
-            </div>
-        </section> 
-        <hr>
 
-    </body>
-    </html
+        <section class="portfolio">
+            <h2>作品集</h2>
+            <nav>
+                <ol class="clearfix">
+                    <li id="portfolioAll">所有</li>
+                    <li id="portfolioFramework">框架</li>
+                    <li id="portfolioVallina">原生JS &amp; CSS</li>
+                </ol>
+                <div id="portfolioBar" class="bar state-1">
+                     <div class="bar-inner"></div>
+                </div>
+            </nav>
+            <script>
+                portfolioAll.onclick=function(){
+                    portfolioBar.className = 'bar state-1'
+                }
+                portfolioFramework.onclick=function(){
+                    portfolioBar.className = 'bar state-2'
+                }
+                portfolioVallina.onclick=function(){
+                    portfolioBar.className = 'bar state-3'
+                }
+            </script>
+
+            <div class="works" style="height:597px; margin-top:40px;">
+                <div class="one" style="top: 0; left: 0;">
+                    <img src="./img/1.jpg">
+                </div>
+                <div class="two" style="top: 0; left: 645px;"> 
+                    <img src="./img/2.jpg">
+                </div>
+                <div class="three" style="top: 312px; left: 645px;">
+                    <img src="./img/3.jpg">
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
