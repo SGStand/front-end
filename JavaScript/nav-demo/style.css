@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{text-decoration: none}
+
+main{
+    text-align: center;
+}
+
+#main_kbd{
+    display: inline-block;
+}
+
+#main_kbd kbd{
+    border: 1px solid #C6A48D;
+    background: #708090;
+    color: #FFFFFF;
+    display: inline-block;
+    width: 4em;
+    height: 4em;
+    text-transform: uppercase;
+    position: relative;
+}
+
+#main_kbd kbd > button{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    background: #708090;
+    color: #FFFFFF;
+    display: none;
+}
+
+#main_kbd kbd:hover > button{
+    display: inline-block;
+}
