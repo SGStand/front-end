@@ -1,1 +1,1 @@
-#[点我预览](https://sgstand.github.io/front-end/JavaScript/nav-demo/index.html)
+φ(￣ー￣ )ノ[点我预览](https://sgstand.github.io/front-end/JavaScript/nav-demo/index.html)
