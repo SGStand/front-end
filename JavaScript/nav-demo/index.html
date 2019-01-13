@@ -6,102 +6,171 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style.css">
     <title>nav-demo</title>
+  
 </head>
 <body>
     <header></header>
 
     <main>
-        <div class="wrapper" id="main_kbd">
-
-        </div>
+        <div class="wrapper" id="main_kbd"></div>
     </main>
 
     <footer></footer>
 
     <script>
+        //1. 初始化hash
+        var init = init()
+        var keys = init['keys']
+        var hash = init['hash']
 
-        //初始化hash
-        var keys = {0: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'], 
-                    1: ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'], 
-                    2: ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
-                    length: 3
-                    }
-                    
-        var hash = {
-            'q': 'qq.com', 
-            'w': 'weibo.com', 
-            'e': 'evernote.com',
-            'r': 'r-project.org',
-            't': 'taobao.com',
-            'u': 'unsplash.com',
-            'i': 'iqiyi.com',
-            'o': 'omnigroup.com',
-            'p': 'processon.com',
-            'a': 'alibaba.com', 
-            's': 'shadowsocks.org',
-            'd': 'dribbble.com',
-            'f': 'ifeng.com',
-            'g': 'google.com',
-            'h': 'huawei.com',
-            'j': 'jianshu.com',
-            'k': 'keep.com', 
-            'l': 'lagou.com',
-            'z': 'zhihu.com',
-            'x': 'xunlei.com',
-            'c': 'css-tricks.com',
-            'v': 'v2ex.com',
-            'b': 'bilibili.com',
-            'n': 'namesilo.com',
-            'm': 'xiaomi.com'
+        //2. 生成键盘
+        creatKyeboard(keys, hash)
+        
+        //3. 监听键盘
+        listenToUser(hash)
+
+        
+        
+        //工
+        //具
+        //函
+        //数
+        function getFromLocalStorage(name){
+            return JSON.parse(localStorage.getItem('editWebsite') || 'null')
         }
-
-        //取出保存的editWebsite覆盖默认的hash
-        hashInlocalStorage = JSON.parse(localStorage.getItem('editWebsite') || 'null')
-        if(hashInlocalStorage){
-            hash = hashInlocalStorage
+        
+        function createTag(tagName){
+            return document.createElement(tagName)
         }
-
-        //遍历keys 生成kbd标签
-        index = 0
-        while(index < keys.length){
-            div_kbd = document.createElement('div')
-            main_kbd.appendChild(div_kbd)
-            row = keys[index] //接受数组
-            index2 = 0
-            while(index2 < row.length){
-                //生成kbd标签
-                kbd = document.createElement('kbd')
-                kbd.textContent = row[index2]
-                div_kbd.appendChild(kbd)
-                //生成button按钮
-                button_kbd = document.createElement('button')
-                button_kbd.textContent = 'Edit'
-                kbd.appendChild(button_kbd)
-                //增加编辑功能
-                button_kbd.id = row[index2]
-                button_kbd.onclick = function(inKbd){
-                    key = inKbd.target.id
-                    inWebsite = prompt('请输入网址')
-                    hash[key] = inWebsite
-                    //保存更改到localStorage
-                    localStorage.setItem('editWebsite', JSON.stringify(hash))
-
+        
+        function createSpan(textContent){
+            var span_kbd = createTag('span')
+            span_kbd.className = 'textStyle'
+            span_kbd.textContent = textContent
+            return span_kbd
+        }
+        
+        function createButton(id){
+            //生成button按钮
+            var button_kbd = createTag('button')
+            button_kbd.textContent = 'Edit'
+            //增加编辑功能
+            button_kbd.id = id
+            button_kbd.onclick = function(inKbd){
+                var key = inKbd.target.id
+                var newImg = inKbd.target.previousSibling
+                var inWebsite = prompt('请输入网址')
+                hash[key] = inWebsite
+                newImg = 'http://' + inWebsite + '/favicon.ico'
+                newImg.onerror = function(websiteIcon){
+                    websiteIcon.target.src = '//i.loli.net/2019/01/13/5c3b1e1166259.png'
                 }
-
-               index2 = index2 + 1
+                //保存更改到localStorage
+                localStorage.setItem('editWebsite', JSON.stringify(hash))
             }
-            index = index + 1
+            return button_kbd
         }
 
-        //监听键盘
-        document.onkeypress = function(inKbd){
-            key = inKbd.key
-            website = hash[key]
-            //当前页面打开
-            //location.href = 'http://' + website
-            window.open('http://' + website, '_blank')
+        function creatIcon(domain){
+            var img_kbd = createTag('img')
+            if(domain){
+                img_kbd.src = 'http://' + domain + '/favicon.ico'
+            }else{
+                img_kbd.src = '//i.loli.net/2019/01/13/5c3b1e1166259.png'
+            }
+            img_kbd.onerror = function(websiteIcon){
+                websiteIcon.target.src = '//i.loli.net/2019/01/13/5c3b1e1166259.png'
+            }
+            return img_kbd
         }
-    </script>
+        
+        function init(){
+            //1. 初始化hash
+            var keys = {0: ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'], 
+                        1: ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'], 
+                        2: ['z', 'x', 'c', 'v', 'b', 'n', 'm'],
+                        length: 3
+                    }            
+                var hash = {
+                    'q': 'qingcloud.com', 
+                    'w': 'weibo.com', 
+                    'e': 'evernote.com',
+                    'r': 'r-project.org',
+                    't': 'ted.com',
+                    'y': 'youtube.com',
+                    'u': 'unsplash.com',
+                    'i': 'iqiyi.com',
+                    'o': 'outlook.live.com',
+                    'p': 'processon.com',
+                    'a': 'acfun.cn', 
+                    's': 'spacex.com',
+                    'd': 'didiyun.com',
+                    'f': 'facebook.com',
+                    'g': 'google.com',
+                    'h': 'huawei.com',
+                    'j': 'jianshu.com',
+                    'k': 'kymetacorp.com', 
+                    'l': 'lagou.com',
+                    'z': 'zhihu.com',
+                    'x': 'xunlei.com',
+                    'c': 'css-tricks.com',
+                    'v': 'v2ex.com',
+                    'b': 'bilibili.com',
+                    'n': 'namesilo.com',
+                    'm': 'xiaomi.com'
+                }
+            //取出保存的editWebsite覆盖默认的hash
+            hashInlocalStorage = getFromLocalStorage('editWebsite')
+            if(hashInlocalStorage){
+                hash = hashInlocalStorage
+            }
+            
+            return {
+                'hash': hash,
+                'keys': keys
+            }
+        }
+
+        function creatKyeboard(keys, hash){
+            //2. 生成键盘
+            //遍历keys 生成kbd标签
+            for(var index = 0; index < keys.length; index = index + 1){
+                //生成row标签
+                var div_kbd = createTag('div')
+                div_kbd.className = 'row'
+                
+                var row = keys[index] //接受数组
+                for(index2 = 0; index2 < row.length; index2 = index2 + 1){
+                    //生成span
+                    var span_kbd = createSpan(row[index2])
+                    //生成button
+                    var button_kbd = createButton(row[index2])
+                    //添加icon
+                    var img_kbd = creatIcon(hash[row[index2]])
+                    //生成kbd标签
+                    var kbd = createTag('kbd')
+                    kbd.className = 'kbdStyle'
+        
+                    kbd.appendChild(span_kbd)
+                    kbd.appendChild(button_kbd)
+                    kbd.appendChild(img_kbd)
+                    div_kbd.appendChild(kbd)
+                }
+                main_kbd.appendChild(div_kbd)
+            }
+        }
+
+        function listenToUser(hash){
+            //3. 监听键盘
+            document.onkeypress = function(inKbd){
+                var key = inKbd.key
+                var website = hash[key]
+                //当前页面打开
+                //location.href = 'http://' + website
+                window.open('http://' + website, '_blank')
+            }
+        }
+        </script>
 
 </body>
 </html>
