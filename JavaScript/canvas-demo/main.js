@@ -19,13 +19,44 @@ listenToUser(canvas)
 var eraserEnable = false
 eraser.onclick = function(){
     eraserEnable = true
-    actions.className = 'actions x'
+    eraser.classList.add('active')
+    pen.classList.remove('active')
 }
-brush.onclick = function(){
+pen.onclick = function(){
     eraserEnable = false
-    actions.className = 'actions'
+    pen.classList.add('active')
+    eraser.classList.remove('active')
 }
 
+//监听颜色
+black.onclick = function(){
+    context.strokeStyle = 'black'
+    black.classList.add('active')
+    crimson.classList.remove('active')
+    dodgerBlue.classList.remove('active')
+    mediumSpringGreen.classList.remove('active')
+}
+crimson.onclick = function(){
+    context.strokeStyle = '#DC143C'
+    black.classList.remove('active')
+    crimson.classList.add('active')
+    dodgerBlue.classList.remove('active')
+    mediumSpringGreen.classList.remove('active')
+}
+dodgerBlue.onclick = function(){
+    context.strokeStyle = '#1E90FF'
+    black.classList.remove('active')
+    crimson.classList.remove('active')
+    dodgerBlue.classList.add('active')
+    mediumSpringGreen.classList.remove('active')
+}
+mediumSpringGreen.onclick = function(){
+    context.strokeStyle = '#00FA9A'
+    black.classList.remove('active')
+    crimson.classList.remove('active')
+    dodgerBlue.classList.remove('active')
+    mediumSpringGreen.classList.add('active')
+}
 
 /*-----------------函数----------------*/
 function listenToUser(canvas){
@@ -45,7 +76,7 @@ function listenToUser(canvas){
             console.log('kaishi')
         }
 
-        canvas.ontouchmove = function(move){
+        canvas.ontouchmove = function(move){ 
             var x = move.touches[0].clientX
             var y = move.touches[0].clientY
             if(!using){return}
@@ -127,7 +158,6 @@ function drawCircle(x, y, radius){
 //画一根线
 function drawLine(x1, y1, x2, y2){
     context.beginPath()
-    context.strokeStyle = 'black'
     context.moveTo(x1, y1)
     context.lineWidth = 3
     context.lineTo(x2, y2)
