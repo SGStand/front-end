@@ -1,3 +1,5 @@
+
+
 ul, ol{
     list-style: none;
 }
@@ -15,7 +17,15 @@ ul, ol{
 
 body{
     margin: 0px;
-    
+
+    width: 100%;
+    height: 100%;
+    content: ' ';
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: #fff;
 }
 
 #canvas{
@@ -52,12 +62,7 @@ body{
     transform: scale(1.2);
 }
 
-.colors{
-    position: fixed;
-    top: 60px;
-    left: 18px;
-}
-.colors li{
+.brush li{
     width: 20px;
     height: 20px;
     border-radius: 50%;
@@ -67,11 +72,17 @@ body{
     
 }
 
+.colors{
+    position: fixed;
+    top: 60px;
+    left: 18px;
+}
+
 .colors .black{
     background-color: black;
 }
-.colors .crimson{
-    background-color: #DC143C;
+.colors .red{
+    background-color: red;
 }
 .colors .dodgerBlue{
     background-color: #1E90FF;
@@ -83,4 +94,30 @@ body{
     box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
     transform: scale(1.2);
     
+}
+
+.sizes{
+    position: fixed;
+    top: 60px;
+    right: 18px;
+    
+}
+.sizes .thin{
+    height: 0;
+    width: 20px;
+    border-top: 3px solid black;
+    border-radius: 0;
+}
+
+.sizes .thick{
+    height: 0;
+    width: 20px;
+    border-top: 6px solid black;
+    border-radius: 0;
+    margin: 16px 0;
+}
+
+.sizes li.active{
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.9);
+    transform: scale(1.2);
 }

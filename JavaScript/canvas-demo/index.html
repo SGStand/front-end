@@ -2,8 +2,7 @@
 <html lang="zh-Hans">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./style.css">
     <title>cancas-demo</title>
 </head>
@@ -19,20 +18,24 @@
             </svg>
         </span>
         <span class="right">
-            <svg class="icon" aria-hidden="true">
+            <svg id="clear" class="icon claer" aria-hidden="true">
                     <use xlink:href="#icon-clear"></use>
             </svg>
-            <svg class="icon" aria-hidden="true">
+            <svg id="download" class="icon download" aria-hidden="true">
                     <use xlink:href="#icon-upload-demo"></use>
         </svg>
         </span>
     </div>
-    <div class="colors">
-        <ol>
+    <div class="brush">
+        <ol class="colors">
             <li id="black" class="black active"></li>
-            <li id="crimson" class="crimson"></li>
+            <li id="red" class="red"></li>
             <li id="dodgerBlue" class="dodgerBlue"></li>
             <li id="mediumSpringGreen" class="mediumSpringGreen"></li>
+        </ol>
+        <ol class="sizes">
+            <li id="thin" class="thin active"></li>
+            <li id="thick" class="thick"></li>
         </ol>
     </div>
     <script src="./main.js"></script>
