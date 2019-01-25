@@ -15,8 +15,6 @@
 .site-welcome.active{
     display: flex;
 }
-
-
 .loading{
     height:200px;
     width:200px;

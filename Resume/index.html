@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="./loading.css">
     <script src="//at.alicdn.com/t/font_1000830_0jntq4nkltgq.js"></script>
+    <script src="./main.js"></script>
     <style type="text/css">
         .icon {
            width: 1em; height: 1em;
@@ -21,18 +22,36 @@
     <div id="siteWelcome" class="site-welcome active">
         <div class="loading"></div>
     </div>
-    <div class="topNavBar">
+    <div id="topNavBar" class="topNavBar">
         <div class="topNavBar-inner clearfix">
             <a class="logo" href="#" art="logo">
                 <span class="rs">RS</span>
                 <span class="card">card</span>
             </a>
-            <nav>
+            <nav class="menu">
                 <ul class="clearfix">
-                    <li><a href="#">关于</a></li>
-                    <li><a href="#">技能</a></li>
-                    <li><a href="#">作品</a></li>
-                    <li><a href="#">博客</a></li>
+                    <li>
+                        <a href="#siteAbout">关于</a>
+                    </li>
+                    <li>
+                        <a href="#siteSkills">技能</a>
+                    </li>
+                    <li>
+                        <a href="#sitePortfolio">作品</a>
+                        <ul class="subMenu">
+                            <li>作品1</li>
+                            <li>作品2</li>
+                            <li>作品3</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">博客</a>
+                        <ul class="subMenu">
+                                <li>博客1</li>
+                                <li>博客2</li>
+                                <li>博客3</li>
+                        </ul>
+                    </li>
                     <li><a href="#">日历</a></li>
                     <li><a href="#">联系方式</a></li>
                     <li><a href="#">其他</a></li>
@@ -45,7 +64,7 @@
     </div>
 
     <main>
-        <div class="userCard">
+        <div id="siteAbout" class="userCard">
             <div class="pictureAndText clearfix">
                 <div class="picture">
                     <img src="./img/avatar.jpg" alt="这里有头🐘">
@@ -96,7 +115,7 @@
             万青，菜鸟切图仔，现在工地搬砖
         </p>
 
-        <section class="skills">
+        <section id="siteSkills" class="skills">
             <h2>技能</h2>
             <ol class="clearfix">
                 <li>
@@ -138,7 +157,7 @@
             </ol>
         </section>
 
-        <section class="portfolio">
+        <section id="sitePortfolio" class="portfolio">
             <h2>作品集</h2>
             <nav>
                 <ol class="clearfix">
@@ -176,10 +195,27 @@
         </section>
     </main>
     <script>
-        setTimeout(function(){
-            siteWelcome.classList.remove('active')
-        }, 1000)
-        
+       let liTages = document.querySelectorAll('nav.menu > ul > li')
+        for(let i = 0; i<liTages.length; i++){
+            liTages[i].onmouseenter = function(x){
+                x.currentTarget.classList.add('active')
+            }
+            liTages[i].onmouseleave = function(x){
+                x.currentTarget.classList.remove('active')
+            }
+        }
+
+        let aTags = document.querySelectorAll('nav.menu > ul > li > a')
+        for(let i = 0; i<aTags.length; i++){
+            aTags[i].onclick = function(x){
+                x.preventDefault()
+                let a = x.currentTarget
+                let href = a.getAttribute('href')
+                let element = document.querySelector(href)
+                let top = element.offsetTop
+                window.scrollTo(0, top-100)
+            }
+        }
     </script>
 </body>
 </html>
