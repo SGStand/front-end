@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>个人简历</title>
-    <link rel="stylesheet" href="./resume.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./loading.css">
     <script src="//at.alicdn.com/t/font_1000830_0jntq4nkltgq.js"></script>
     <style type="text/css">
         .icon {
@@ -17,6 +18,9 @@
     </style>
 </head>
 <body>
+    <div id="siteWelcome" class="site-welcome active">
+        <div class="loading"></div>
+    </div>
     <div class="topNavBar">
         <div class="topNavBar-inner clearfix">
             <a class="logo" href="#" art="logo">
@@ -171,5 +175,11 @@
             </div>
         </section>
     </main>
+    <script>
+        setTimeout(function(){
+            siteWelcome.classList.remove('active')
+        }, 1000)
+        
+    </script>
 </body>
 </html>
