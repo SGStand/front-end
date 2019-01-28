@@ -1,3 +1,12 @@
+[data-x].offset{
+    transform: translateY(200px);
+}
+[data-x]{
+    transform: translateY(0);
+    transition: all 1s;
+
+}
+
 .clearfix::after{ content: ''; display: block; clear: both; }
 hr{ height: 0; border: none; border-top: 1px solid #dedede; }
 
@@ -18,7 +27,8 @@ ol{ list-style: none; }
 .topNavBar nav>ul{ margin: 0; padding: 0; }
 .topNavBar nav>ul>li{ position: relative; float: left; margin: 0px 17px; }
 .topNavBar nav>ul>li>a{ position: relative; font-size: 12px; color: inherit; border-top: 3px solid transparent; border-bottom: 3px solid transparent; display: block; font-weight: bold; padding: 5px 0px; }
-.topNavBar nav>ul>li.active> a::after{ animation: menuSlide 0.4s; content: ''; display: block; top: 100%; left: 0; width: 100%; background: #e6686a; height: 3px; position: absolute; }
+.topNavBar nav>ul>li.active > a::after,
+.topNavBar nav>ul>li.highlight > a::after{ animation: menuSlide 0.4s; content: ''; display: block; top: 100%; left: 0; width: 100%; background: #e6686a; height: 3px; position: absolute; }
 @keyframes menuSlide{ 0%{ width: 0; } 100%{ width: 100%; } }
 .topNavBar nav>ul>li .subMenu{ display: none; position: absolute; left: 0; top: 100%; background: white; color: #3d4451; animation: subMenuSlide 0.4s; cursor:pointer; }
 @keyframes subMenuSlide{ 0%{ margin-left: -100% } 100%{ margin-left: 0% } }
@@ -54,8 +64,13 @@ section.portfolio{ max-width: 940px; margin-left: auto; margin-right: auto; marg
 .skills > ol{ background: #FFFFFF; box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.5); padding: 42px 50px 10px 50px; margin-top: 30px; }
 .skills li{ float: left; width: 48%; box-sizing: border-box; }
 .skills > ol > li:nth-child(even){ float: right; }
-.skills .progressBar{ height: 5px; background: #FAE1E1; border-radius: 2px; margin: 4px 0 40px 0; }
-.skills .progress{ height: 100%; background: #E6696A; width: 70%; border-radius: 2px; }
+.skills .progressBar{ height: 5px; background: #FAE1E1; border-radius: 2px; margin: 4px 0 40px 0; overflow: hidden;}
+.skills .progress{ height: 100%; background: #E6696A; width: 70%; border-radius: 2px; 
+    transform: translateX(0); transition: 1s;
+}
+.skills.offset .progress{
+    transform: translateX(-100%);
+}
 .portfolio{ text-align: center; margin-bottom: 100px; }
 section.portfolio>nav{ text-align: center; display: inline-block; vertical-align: top; margin-top: 32px; }
 section.portfolio ol{ text-align: center; display: inline-block; vertical-align: top; margin: 0 auoto; }
